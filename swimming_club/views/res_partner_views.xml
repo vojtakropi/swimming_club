@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_partner_form_swimming_club" model="ir.ui.view">
+        <field name="name">res.partner.form.swimming.club</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+
+            <!-- Main form: email and phone only for parents -->
+            <xpath expr="/form/sheet/div/group/label[@for='email']" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+            <!-- email is required on partners linked to a user, so keep it visible for them -->
+            <xpath expr="/form/sheet/div/group/div[field[@name='email']]" position="attributes">
+                <attribute name="invisible">parent_id and not user_ids</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/div/group/label[@for='phone']" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/div/group/div[field[@name='phone']]" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+
+            <!-- Main form: address only for parents -->
+            <xpath expr="/form/sheet/group//span[@name='address_name']" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/group//div[hasclass('o_address_format')]" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+
+            <!-- Main form: fields not used by the club -->
+            <xpath expr="/form/sheet/group//div[@name='identifiers']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/group//field[@name='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/group//field[@name='website']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/group//field[@name='lang']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/group//field[@name='category_id']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Landlord checkbox above the address (only top-level contacts) -->
+            <xpath expr="/form/sheet/group//span[@name='address_name']" position="before">
+                <field name="is_landlord" invisible="parent_id"/>
+            </xpath>
+            <!-- Swimming club fields, for everyone except landlords -->
+            <xpath expr="/form/sheet/group//field[@name='category_id']" position="after">
+                <field name="birthdate" invisible="is_landlord"/>
+                <field name="swimming_level" invisible="is_landlord"/>
+                <field name="gdpr_consent" invisible="is_landlord"/>
+            </xpath>
+            <!-- ... in the children kanban cards on the Contacts tab -->
+            <xpath expr="//field[@name='child_ids']/kanban//div[field[@name='function']]" position="after">
+                <div invisible="not birthdate">
+                    <i class="oi oi-fw me-1" data-icon="cake" title="Birthdate"/>
+                    <field name="birthdate"/>
+                </div>
+                <div invisible="not swimming_level">
+                    <i class="oi oi-fw me-1" data-icon="trophy" title="Swimming Level"/>
+                    <field name="swimming_level"/>
+                </div>
+            </xpath>
+            <!-- ... and in the "Add Child" popup -->
+            <xpath expr="//field[@name='child_ids']/form//group[@name='other_info']" position="after">
+                <group name="swimming_club">
+                    <field name="birthdate"/>
+                    <field name="swimming_level"/>
+                    <field name="gdpr_consent"/>
+                </group>
+            </xpath>
+
+            <!-- Children: only the Notes tab -->
+            <xpath expr="/form/sheet/notebook/page[@name='contact_addresses']" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+            <xpath expr="/form/sheet/notebook/page[@name='sales_purchases']" position="attributes">
+                <attribute name="invisible">parent_id</attribute>
+            </xpath>
+
+            <!-- Club wording: parent instead of company, child instead of related contact (cs: i18n/cs.po) -->
+            <xpath expr="/form/sheet/div/group//field[@name='parent_id']" position="attributes">
+                <attribute name="placeholder">Parent</attribute>
+            </xpath>
+            <!-- Existing children open in the full form, new ones in the popup (static/src/js/child_contacts_field.js) -->
+            <xpath expr="//field[@name='child_ids']" position="attributes">
+                <attribute name="add-label">Add Child</attribute>
+                <attribute name="widget">swimming_club_child_contacts</attribute>
+            </xpath>
+
+            <!-- Child contact popup (Contacts tab): no Invoice/Delivery/Other addresses,
+                 every child is a 'contact' (default_type comes from the child_ids context) -->
+            <xpath expr="//field[@name='child_ids']/form//field[@name='type']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+            <!-- Child contact popup (Contacts tab): children have no contact details -->
+            <xpath expr="//field[@name='child_ids']/form//label[@for='email']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//div[field[@name='email']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//label[@for='phone']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//div[field[@name='phone']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//label[@for='function']" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+            <xpath expr="//field[@name='child_ids']/form//div[field[@name='function']]" position="attributes">
+                <attribute name="invisible">1</attribute>
+            </xpath>
+
+        </field>
+    </record>
+
+    <!-- Contacts list: swimming club columns (can be hidden via the optional columns menu) -->
+    <record id="view_partner_tree_swimming_club" model="ir.ui.view">
+        <field name="name">res.partner.list.swimming.club</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='phone']" position="after">
+                <field name="birthdate" optional="show"/>
+                <field name="swimming_level" optional="show"/>
+                <field name="gdpr_consent" optional="show"/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Contacts search: Parents / Children filters (shared by list and kanban) -->
+    <record id="view_res_partner_filter_swimming_club" model="ir.ui.view">
+        <field name="name">res.partner.select.swimming.club</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_res_partner_filter"/>
+        <field name="arch" type="xml">
+            <xpath expr="//filter[@name='filter_vat_set']" position="before">
+                <filter string="Parents" name="filter_parents" domain="[('parent_id', '=', False), ('is_landlord', '=', False)]"/>
+                <filter string="Children" name="filter_children" domain="[('parent_id', '!=', False)]"/>
+                <filter string="Landlords" name="filter_landlords" domain="[('is_landlord', '=', True)]"/>
+                <separator/>
+            </xpath>
+        </field>
+    </record>
+
+    <!-- Contacts kanban: swimming club info on the card -->
+    <record id="res_partner_kanban_view_swimming_club" model="ir.ui.view">
+        <field name="name">res.partner.kanban.swimming.club</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//templates//main/div[div/field[@name='email']]" position="inside">
+                <div invisible="not birthdate">
+                    <i class="oi oi-fw me-1" data-icon="cake" title="Birthdate"/>
+                    <field name="birthdate"/>
+                </div>
+                <div invisible="not swimming_level">
+                    <i class="oi oi-fw me-1" data-icon="trophy" title="Swimming Level"/>
+                    <field name="swimming_level"/>
+                </div>
+                <div invisible="not gdpr_consent">
+                    <i class="oi oi-fw me-1 text-success" data-icon="check_circle" title="GDPR Consent"/>
+                    <span>GDPR Consent</span>
+                </div>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>
