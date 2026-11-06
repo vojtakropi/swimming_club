@@ -1,0 +1,271 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* swimming_club
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 20.0\n"
+"Report-Msgid-Bugs-To: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: \n"
+"Language: cs\n"
+"Plural-Forms: nplurals=4; plural=(n == 1 && n % 1 == 0) ? 0 : (n >= 2 && n <= 4 && n % 1 == 0) ? 1: (n % 1 != 0 ) ? 2 : 3;\n"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.res_partner_kanban_view_swimming_club
+msgid ""
+"<i class=\"oi oi-fw me-1 text-success\" data-icon=\"check_circle\" title=\"GDPR Consent\"/>\n"
+"                    <span>GDPR Consent</span>"
+msgstr ""
+"<i class=\"oi oi-fw me-1 text-success\" data-icon=\"check_circle\" title=\"Souhlas GDPR\"/>\n"
+"                    <span>Souhlas GDPR</span>"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.res_partner_kanban_view_swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_partner_form_swimming_club
+msgid "<i class=\"oi oi-fw me-1\" data-icon=\"cake\" title=\"Birthdate\"/>"
+msgstr ""
+"<i class=\"oi oi-fw me-1\" data-icon=\"cake\" title=\"Datum narození\"/>"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.res_partner_kanban_view_swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_partner_form_swimming_club
+msgid ""
+"<i class=\"oi oi-fw me-1\" data-icon=\"trophy\" title=\"Swimming Level\"/>"
+msgstr ""
+"<i class=\"oi oi-fw me-1\" data-icon=\"trophy\" title=\"Plavecká úroveň\"/>"
+
+#. module: swimming_club
+#: model:ir.model.constraint,message:swimming_club.constraint_swimming_lane_name_pool_uniq
+msgid "A lane with this name already exists in this swimming pool."
+msgstr "Dráha s tímto názvem už v tomto bazénu existuje."
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__active
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__active
+msgid "Active"
+msgstr "Aktivní"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_partner_form_swimming_club
+msgid "Add Child"
+msgstr "Přidat dítě"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "Address"
+msgstr "Adresa"
+
+#. module: swimming_club
+#: model:ir.model.fields.selection,name:swimming_club.selection__res_partner__swimming_level__advanced
+msgid "Advanced"
+msgstr "Pokročilý"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_lane_search
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_search
+msgid "Archived"
+msgstr "Archivováno"
+
+#. module: swimming_club
+#: model:ir.model.fields.selection,name:swimming_club.selection__res_partner__swimming_level__beginner
+msgid "Beginner"
+msgstr "Začátečník"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_res_partner__birthdate
+#: model:ir.model.fields,field_description:swimming_club.field_res_users__birthdate
+msgid "Birthdate"
+msgstr "Datum narození"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_res_partner_filter_swimming_club
+msgid "Children"
+msgstr "Děti"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__city
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "City"
+msgstr "Město"
+
+#. module: swimming_club
+#: model:ir.model.fields,help:swimming_club.field_res_partner__is_landlord
+#: model:ir.model.fields,help:swimming_club.field_res_users__is_landlord
+msgid ""
+"Company that rents a swimming pool to the club. Landlords are not club members and are excluded from the Parents filter."
+msgstr ""
+"Firma, která klubu pronajímá bazén. Pronajímatelé nejsou členy klubu a nezobrazují se ve filtru Rodiče."
+
+#. module: swimming_club
+#: model:ir.model.fields,help:swimming_club.field_swimming_pool__partner_id
+msgid ""
+"Company the club pays the rent to. Use it as the vendor on vendor bills."
+msgstr ""
+"Firma, které klub platí nájem. Použijte ji jako dodavatele na přijatých fakturách."
+
+#. module: swimming_club
+#: model:ir.model.fields.selection,name:swimming_club.selection__res_partner__swimming_level__competitive
+msgid "Competitive"
+msgstr "Závodník"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__country_id
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "Country"
+msgstr "Země"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__create_uid
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__create_uid
+msgid "Created by"
+msgstr "Vytvořeno uživatelem"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__create_date
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__create_date
+msgid "Created on"
+msgstr "Vytvořeno dne"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__display_name
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__display_name
+msgid "Display Name"
+msgstr "Zobrazovací název"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "e.g. City Swimming Pool"
+msgstr "např. Městský bazén"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_res_partner__gdpr_consent
+#: model:ir.model.fields,field_description:swimming_club.field_res_users__gdpr_consent
+msgid "GDPR Consent"
+msgstr "Souhlas GDPR"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__id
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__id
+msgid "ID"
+msgstr "ID"
+
+#. module: swimming_club
+#: model:ir.model.fields.selection,name:swimming_club.selection__res_partner__swimming_level__intermediate
+msgid "Intermediate"
+msgstr "Mírně pokročilý"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_res_partner__is_landlord
+#: model:ir.model.fields,field_description:swimming_club.field_res_users__is_landlord
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__partner_id
+msgid "Landlord"
+msgstr "Pronajímatel"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_res_partner_filter_swimming_club
+msgid "Landlords"
+msgstr "Pronajímatelé"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__lane_ids
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "Lanes"
+msgstr "Dráhy"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__write_uid
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__write_uid
+msgid "Last Updated by"
+msgstr "Naposledy upraveno uživatelem"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__write_date
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__write_date
+msgid "Last Updated on"
+msgstr "Naposledy upraveno dne"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__name
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__name
+msgid "Name"
+msgstr "Název"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__lane_count
+msgid "Number of Lanes"
+msgstr "Počet drah"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_partner_form_swimming_club
+msgid "Parent"
+msgstr "Rodič"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_res_partner_filter_swimming_club
+msgid "Parents"
+msgstr "Rodiče"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__sequence
+msgid "Sequence"
+msgstr "Pořadí"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__street
+msgid "Street"
+msgstr "Ulice"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "Street..."
+msgstr "Ulice..."
+
+#. module: swimming_club
+#: model:ir.ui.menu,name:swimming_club.menu_swimming_club_root
+msgid "Swimming Club"
+msgstr "Plavecký klub"
+
+#. module: swimming_club
+#: model:ir.model,name:swimming_club.model_swimming_lane
+msgid "Swimming Lane"
+msgstr "Plavecká dráha"
+
+#. module: swimming_club
+#: model:ir.actions.act_window,name:swimming_club.action_swimming_lane
+#: model:ir.ui.menu,name:swimming_club.menu_swimming_lane
+msgid "Swimming Lanes"
+msgstr "Plavecké dráhy"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_res_partner__swimming_level
+#: model:ir.model.fields,field_description:swimming_club.field_res_users__swimming_level
+msgid "Swimming Level"
+msgstr "Plavecká úroveň"
+
+#. module: swimming_club
+#: model:ir.model,name:swimming_club.model_swimming_pool
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_lane__pool_id
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_lane_search
+msgid "Swimming Pool"
+msgstr "Bazén"
+
+#. module: swimming_club
+#: model:ir.actions.act_window,name:swimming_club.action_swimming_pool
+#: model:ir.ui.menu,name:swimming_club.menu_swimming_pool
+msgid "Swimming Pools"
+msgstr "Bazény"
+
+#. module: swimming_club
+#: model:ir.model.fields,field_description:swimming_club.field_swimming_pool__zip
+msgid "Zip"
+msgstr "PSČ"
+
+#. module: swimming_club
+#: model_terms:ir.ui.view,arch_db:swimming_club.view_swimming_pool_form
+msgid "ZIP"
+msgstr "PSČ"
